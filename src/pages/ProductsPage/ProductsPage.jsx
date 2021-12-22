@@ -20,7 +20,7 @@ const ProductsPage = () => {
         return product.category === category;
       })
     );
-  }, []);
+  }, [params.category]);
 
   return (
     <div className="products-page-container">
