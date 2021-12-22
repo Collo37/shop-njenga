@@ -1,0 +1,55 @@
+.categories-page-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-categories {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.shopping-category {
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: orange;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.shopping-category::after {
+  content: "";
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  left: 0;
+  height: 0;
+  background-color: #8000007c;
+  transition: all 0.4s ease;
+}
+
+.shopping-category:hover.shopping-category::after {
+  height: 100%;
+}
+
+.shopping-category h2 {
+  color: white;
+  font-size: 24px;
+}
+
+@media (max-width: 500px) {
+  .shopping-categories {
+    flex-direction: column;
+    align-items: center;
+  }
+}

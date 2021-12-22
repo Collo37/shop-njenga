@@ -1,0 +1,11 @@
+.navigation-link {
+  margin: 0 15px;
+  color: #5d5f5f;
+  cursor: pointer;
+  padding: 3px;
+  transition: all 0.3s ease;
+}
+
+.navigation-link:hover {
+  color: #e9672b;
+}

@@ -1,0 +1,15 @@
+.flashcard-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+@media (max-width: 400px) {
+  .flashcard-container {
+    flex-direction: column;
+  }
+}

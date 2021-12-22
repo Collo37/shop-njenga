@@ -1,0 +1,39 @@
+.flash-card-container {
+  width: 30%;
+  height: 300px;
+  min-width: 250px;
+  max-width: 400px;
+  margin: 0 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.flash-card-container:hover {
+  filter: brightness(1.1);
+}
+
+.flash-card-details {
+  font-size: 24px;
+  color: white;
+}
+
+.discount {
+  background-color: #ef8c5f;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .flash-card-container {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+  }
+}

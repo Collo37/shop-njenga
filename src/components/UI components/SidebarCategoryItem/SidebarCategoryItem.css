@@ -1,0 +1,20 @@
+.sidebar-category-item-container {
+  width: 100%;
+  height: fit-content;
+}
+
+.sidebar-category-title {
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.sidebar-category-item {
+  width: 100%;
+  padding: 0.4rem;
+  border-bottom: 1px solid black;
+  transition: all 0.4s ease;
+}
+
+.sidebar-category-item:hover {
+  color: #de5212;
+}

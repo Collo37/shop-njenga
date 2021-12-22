@@ -1,0 +1,22 @@
+.product-details-container {
+  width: 100%;
+  height: fit-content;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.product-details-container img {
+  height: 400px;
+  width: 50%;
+  object-fit: contain;
+}
+
+@media (max-width: 500px) {
+  .product-details-container img {
+    width: 100%;
+  }
+}

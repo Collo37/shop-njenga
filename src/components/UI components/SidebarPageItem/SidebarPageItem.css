@@ -1,0 +1,24 @@
+.sidebar-menu-item {
+  width: 100%;
+  height: fit-content;
+  text-align: left;
+  padding: 0.5rem;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.selected {
+  border: 1px solid #de5212;
+}
+
+.sidebar-menu-item > p,
+.toggle-categories p {
+  color: black;
+  font-weight: bold;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-menu-item p:hover {
+  color: #de5212;
+}
