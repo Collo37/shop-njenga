@@ -4,7 +4,7 @@ import "./ProductDetailsContainerStyles.css";
 const ProductDetailsContainer = ({ product }) => {
   return typeof product !== undefined ? (
     <div className="product-details-container">
-      <img src="" alt={product?.name} className="product-image" />
+      <img src={product?.image} alt={product?.name} className="product-image" />
       <ProductDetails product={product} />
     </div>
   ) : (

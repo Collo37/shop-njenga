@@ -10,7 +10,7 @@ const ProductDetails = ({ product }) => {
     countReducedHandler,
     colorSelectedHandler,
     addToFavorites,
-    addToCart,
+    addItemToCart,
     colors,
   } = ProductDetailsLogic();
   return (
@@ -28,6 +28,7 @@ const ProductDetails = ({ product }) => {
                 key={index}
                 onClick={() => colorSelectedHandler(index)}
                 style={{ backgroundColor: color.toLowerCase() }}
+                value={color}
               />
             );
           })}
@@ -43,7 +44,7 @@ const ProductDetails = ({ product }) => {
           textColor="white"
           color="orange"
           title="Add to cart"
-          click={() => addToCart(product.id)}
+          click={() => addItemToCart({ ...product, quantity: count })}
         />
         <Favorite
           onClick={() => addToFavorites(product.id)}

@@ -1,14 +1,12 @@
 import { useSelector } from "react-redux";
 import {
-  AirplanemodeActive,
   FavoriteBorder,
-  Label,
   Menu,
-  MoneyOutlined,
   Person,
   SearchOutlined,
   ShoppingCart,
 } from "@material-ui/icons";
+import { Badge } from "@material-ui/core";
 
 import SideBar from "../Sidebar/SideBar";
 import BackDrop from "../Backdrop/BackDrop";
@@ -26,6 +24,7 @@ import "./headerStyles.css";
 const Header = () => {
   const themeColors = useSelector((state) => state.theme);
   const {
+    itemsInCart,
     user,
     logIn,
     searchBar,
@@ -45,59 +44,6 @@ const Header = () => {
       <div className="topSection">
         <div className="menu-bar" onClick={() => setShowMenuBar(!showMenuBar)}>
           <Menu style={{ color: themeColors.secondaryColor }} />
-        </div>
-        <div className="topItemsLeft">
-          <span className="topItemsLeftContainer">
-            <AirplanemodeActive
-              style={{
-                marginRight: 6,
-                color: themeColors.secondaryColor,
-                transform: "rotateZ(90deg)",
-              }}
-            />
-            <p
-              style={{
-                color: themeColors.secondaryColor,
-              }}
-            >
-              Free delivery over sh 1000
-            </p>
-          </span>
-          <span className="topItemsLeftContainer">
-            <MoneyOutlined
-              style={{
-                marginRight: 6,
-                color: themeColors.secondaryColor,
-              }}
-            />
-            <p style={{ color: themeColors.secondaryColor }}>
-              Money back guarantee
-            </p>
-          </span>
-          <span className="topItemsLeftContainer">
-            <Label
-              style={{
-                marginRight: 6,
-                color: themeColors.secondaryColor,
-                transform: "rotateZ(-135deg)",
-              }}
-            />
-            <p style={{ color: themeColors.secondaryColor }}>
-              Weekly new arrivals
-            </p>
-          </span>
-        </div>
-        <div className="topItemsRight">
-          <select>
-            <option>ENG</option>
-            <option>SHENG</option>
-            <option>CHINESE</option>
-          </select>
-          <select>
-            <option>DOL</option>
-            <option>KSH</option>
-            <option>YEN</option>
-          </select>
         </div>
       </div>
       <div
@@ -126,13 +72,20 @@ const Header = () => {
           </form>
         </div>
         <div className="middle-items-right">
-          <FavoriteBorder style={{ color: "#5d5f5f", cursor: "pointer" }} />
-          <ShoppingCart
-            style={{ color: "#5d5f5f", cursor: "pointer", marginLeft: 10 }}
+          <FavoriteBorder
+            style={{ color: "#5d5f5f", cursor: "pointer" }}
+            onClick={() => navLinkHandler("favorites")}
           />
+          <Badge badgeContent={itemsInCart} style={{ color: "#fc7a1e" }}>
+            <ShoppingCart
+              style={{ color: "#5d5f5f", cursor: "pointer", marginLeft: 10 }}
+              onClick={() => navLinkHandler("cart")}
+            />
+          </Badge>
           <div className="profile">
             <Person
               style={{ color: "#5d5f5f", cursor: "pointer", marginLeft: 10 }}
+              onClick={() => navLinkHandler("login")}
             />
             {user ? <p>{user}</p> : <p onClick={logIn}>Sign-in</p>}
           </div>

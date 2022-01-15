@@ -8,6 +8,8 @@ import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import CategoriesPage from "./pages/CategoriesPage/CategoriesPage";
 import Login from "./pages/Login|signup/Login";
 import SignUp from "./pages/Login|signup/SignUp";
+import Cart from "./pages/Cart/Cart";
+import Error404 from "./pages/404/Error404";
 
 import "./App.css";
 
@@ -23,6 +25,8 @@ function App() {
           <Route path="/categories/:category" element={<ProductsPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </div>

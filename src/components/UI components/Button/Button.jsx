@@ -1,6 +1,6 @@
-const Button = ({ title, color, click, textColor }) => {
+const Button = ({ title, color, click, textColor, large }) => {
   const buttonStyles = {
-    width: 100,
+    width: large ? "100%" : 120,
     height: 40,
     padding: 8,
     borderRadius: "10px",
